@@ -1,0 +1,132 @@
+#app {
+	width: 420px;
+	margin: 20px auto;
+	overflow: hidden;
+	padding-left: 20px;
+}
+.hobby-header {
+	white-space: nowrap;
+}
+.hobby-header:after {
+	content: '';
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	border-bottom: 2px dotted black;
+	top: -4px;
+	margin-left: 5px;
+}
+
+.hobby-list {
+	list-style-type: none;
+	padding-left: 20px;
+	margin-left: -20px;
+}
+.hobby-list li {
+	position: relative;
+	display: flex;
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+.hobby-list li.added {
+	flex-wrap: wrap;
+}
+
+.hobby-list li .text {
+	flex-basis: 100%;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	max-width: 100%;
+	white-space: nowrap;
+}
+
+.hobby-list li.added .text {
+	flex-basis: auto;
+}
+.hobby-list li .text:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 14px;
+	height: 100%;
+	background-image: url('../img/fader.png');
+	background-repeat: repeat-y;
+}
+
+a.showAll {
+	color: darkorange;
+}
+
+.remove-btn, .copy-btn, .complain-btn {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	margin-right: 5px;
+	transition: .5s;
+	display: none;
+	margin-left: -17px;
+	margin-top: 3px;
+}
+.hobby-list:hover li .remove-btn,
+.hobby-list:hover li .copy-btn,
+.hobby-list:hover li .complain-btn {
+	display: block;
+}
+
+.remove-btn {
+	width: 12px;
+	height: 12px;
+	background-image: url('../img/close.png');
+}
+
+.copy-btn {
+	width: 12px;
+	height: 12px;
+	background-image: url('../img/add.gif');
+}
+
+.complain-btn {
+	background-image: url('../img/warn.png');
+
+	padding-left: 15px;
+	margin-left: auto;
+	background-position: 0 2px;
+	white-space: nowrap;
+}
+.hobby-list li.added .complain-btn {
+	margin-left: 5px;
+}
+
+
+.alert {
+	color: green;
+	padding-left: 18px;
+	margin-left: 5px;
+	background-image: url(../img/ok.png);
+	background-repeat: no-repeat;
+	line-height: 20px;
+	white-space: nowrap;
+}
+
+#complain-form {
+	position: fixed;
+	display: none;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 999;
+	background-color: #fff;
+	border: 1px solid lightgrey;
+	padding: 20px;
+}
+#complain-form.show {
+	display: block;
+}
+
+.btn {
+	cursor: pointer;
+}
+
